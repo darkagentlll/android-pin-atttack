@@ -1,0 +1,43 @@
+ENTER
+STRING count=0
+ENTER
+STRING echo "DELAY 5000"
+ENTER
+STRING for pin in {0000..9999}
+ENTER
+STRING do
+ENTER
+STRING count=$((count+1))
+ENTER
+STRING echo "STRING $pin"
+ENTER
+STRING # After every other pin, do this
+ENTER
+STRING if [ $((count % 2)) -eq 0 ]; then
+ENTER
+STRING echo "DELAY 1000"
+ENTER
+STRING echo "ENTER"
+ENTER
+STRING echo "ENTER"
+ENTER
+STRING fi
+ENTER
+STRING # After 5 pins, do this
+ENTER
+STRING if [ $((count % 5)) -eq 0 ]; then
+ENTER
+STRING for (( delay=0 ; $((delay < 4)) ; delay=$((delay+1)) ))
+ENTER
+STRING do
+ENTER
+STRING echo "DELAY 5000"
+ENTER
+STRING echo "ENTER"
+ENTER
+STRING done
+ENTER
+STRING fi
+ENTER
+STRING done
+ENTER
